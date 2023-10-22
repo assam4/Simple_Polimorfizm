@@ -1,6 +1,14 @@
 #include "animal.h"
 #include <vector>
 
+inline void wait_for_a_symbhol() 
+{
+    char symbhol;
+    std::cin.clear();
+    std::cout << "\nenter any symbhol for Exit . ";
+    std::cin >> symbhol;
+}
+
 int main () {
     try{
         std::vector<animal*> zoo ;
@@ -19,6 +27,7 @@ int main () {
         animal->voice();  }
 
     for (auto animal : zoo) delete animal ;
+    wait_for_a_symbhol();
 
     return 0 ;}
 
