@@ -2,30 +2,35 @@
 #define _ANIMAL_H_
 #include <string>
 #include <iostream>
-class animal {
+class animal 
+{
 public:
-  explicit animal(const std::string n):name(n){}
-   virtual ~animal(){}
+  explicit animal(const std::string n):name(n) {}
+   virtual ~animal() {}
    virtual  void move  () const = 0 ;
    virtual  void eat   () const = 0 ;
    virtual  void voice () const = 0 ;
+
 protected:
-
- std::string name ;
-
+          std::string name ;
 };
 
 
-class fish:public animal {
+class fish:public animal
+{
 public:
- explicit fish(const std::string n):animal(n){}
-  ~fish(){ std::cout << "The fish is dead ."<<std::endl;}
+ explicit fish(const std::string n):animal(n) {}
+  ~fish()
+         {  
+           std::cout << "The fish is dead ."<<std::endl;
+         }
    void move  () const ;
    void eat   () const ;
    void voice () const ;
 };
 
-class monkey:public animal {
+class monkey:public animal 
+{
 public:
 explicit  monkey(const std::string n):animal(n){}
   ~monkey(){ std::cout << "The monkey is dead ."<<std::endl;}
@@ -34,19 +39,27 @@ explicit  monkey(const std::string n):animal(n){}
    void voice () const ;
 };
 
-class snake:public animal {
+class snake:public animal 
+{
 public:
-explicit  snake(const std::string n):animal(n){}
-  ~snake(){ std::cout << "The snake is dead ."<<std::endl;}
+explicit  snake(const std::string n):animal(n) {}
+  ~snake()
+          {  
+            std::cout << "The snake is dead ."<<std::endl;
+          }
    void move  () const ;
    void eat   () const ;
    void voice () const ;
 };
 
-class lion:public animal {
+class lion:public animal 
+{
 public:
-explicit  lion(const std::string n):animal(n){}
-  ~lion(){ std::cout << "The lion is dead ."<<std::endl;}
+explicit  lion(const std::string n):animal(n) {}
+  ~lion()
+         { 
+           std::cout << "The lion is dead ."<<std::endl;
+         }
    void move  () const ;
    void eat   ()  const ;
    void voice () const ;
