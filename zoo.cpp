@@ -9,8 +9,10 @@ inline void wait_for_a_symbhol()
     std::cin >> symbhol;
 }
 
-int main () {
-    try{
+int main () 
+{
+    try
+        {
         std::vector<animal*> zoo ;
          zoo.push_back(new lion("Simba"));
          zoo.push_back(new fish("Nemo"));
@@ -24,12 +26,16 @@ int main () {
     {
         animal->eat();
         animal->move();
-        animal->voice();  }
+        animal->voice();  
+    }
 
     for (auto animal : zoo) delete animal ;
     wait_for_a_symbhol();
 
     return 0 ;}
 
-    catch(...) {std::cerr << "Something went wrong :(";exit(1);}
+    catch(...) 
+               {
+                   std::cerr << "Something went wrong :(";exit(1);
+               }
 }
