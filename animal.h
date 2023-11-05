@@ -4,7 +4,7 @@
 #include <iostream>
 class animal {
 public:
-   animal(const std::string n):name(n){}
+  explicit animal(const std::string n):name(n){}
    virtual ~animal(){}
    virtual  void move  () const = 0 ;
    virtual  void eat   () const = 0 ;
@@ -18,7 +18,7 @@ protected:
 
 class fish:public animal {
 public:
-  fish(const std::string n):animal(n){}
+ explicit fish(const std::string n):animal(n){}
   ~fish(){ std::cout << "The fish is dead ."<<std::endl;}
    void move  () const ;
    void eat   () const ;
@@ -27,7 +27,7 @@ public:
 
 class monkey:public animal {
 public:
-  monkey(const std::string n):animal(n){}
+explicit  monkey(const std::string n):animal(n){}
   ~monkey(){ std::cout << "The monkey is dead ."<<std::endl;}
    void move  () const ;
    void eat   () const ;
@@ -36,7 +36,7 @@ public:
 
 class snake:public animal {
 public:
-  snake(const std::string n):animal(n){}
+explicit  snake(const std::string n):animal(n){}
   ~snake(){ std::cout << "The snake is dead ."<<std::endl;}
    void move  () const ;
    void eat   () const ;
@@ -45,7 +45,7 @@ public:
 
 class lion:public animal {
 public:
-  lion(const std::string n):animal(n){}
+explicit  lion(const std::string n):animal(n){}
   ~lion(){ std::cout << "The lion is dead ."<<std::endl;}
    void move  () const ;
    void eat   ()  const ;
