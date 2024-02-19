@@ -1,6 +1,5 @@
 #include "animal.h"
 
-
 // fish functions declaration
 
 void fish::move  () const {  std::cout << "A fish named "<< name << " swims." << std::endl ; } 
