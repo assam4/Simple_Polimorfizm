@@ -1,2 +1,0 @@
-C:\Users\9\Desktop\zoo\x64\Debug\zoo.exe
-C:\Users\9\Desktop\zoo_cpp\x64\Debug\zoo.exe
