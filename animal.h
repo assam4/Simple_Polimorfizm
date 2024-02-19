@@ -1,64 +1,77 @@
-#ifndef _ANIMAL_H_
-#define _ANIMAL_H_
+#pragma once
 #include <string>
 #include <iostream>
+
 class animal 
 {
 public:
-  explicit animal(const std::string n):name(n) {}
-   virtual ~animal() {}
+   animal(const std::string& n)
+                      : name(n) 
+    { }
+   virtual ~animal() noexcept = default ;
    virtual  void move  () const = 0 ;
    virtual  void eat   () const = 0 ;
    virtual  void voice () const = 0 ;
 
 protected:
-          std::string name ;
+         const std::string name ;
 };
 
 
-class fish:public animal
+class fish : public animal
 {
 public:
- explicit fish(const std::string n):animal(n) {}
+    fish(const std::string& n)
+                  : animal(n) 
+     { }
   ~fish()
          {  
-           std::cout << "The fish is dead ."<<std::endl;
+           std::cout << "The fish is dead !. " << std::endl ;
          }
    void move  () const ;
    void eat   () const ;
    void voice () const ;
 };
 
-class monkey:public animal 
+class monkey : public animal 
 {
 public:
-explicit  monkey(const std::string n):animal(n){}
-  ~monkey(){ std::cout << "The monkey is dead ."<<std::endl;}
+    monkey(const std::string& n)
+              : animal(n)
+    { }
+    ~monkey()
+            { 
+              std::cout << "The monkey is dead !." << std::endl ;
+            }
    void move  () const ;
    void eat   () const ;
    void voice () const ;
 };
 
-class snake:public animal 
+class snake : public animal 
 {
 public:
-explicit  snake(const std::string n):animal(n) {}
-  ~snake()
+    snake(const std::string n)
+                    : animal(n) 
+    { }
+    ~snake()
           {  
-            std::cout << "The snake is dead ."<<std::endl;
+            std::cout << "The snake is dead !." << std::endl ;
           }
    void move  () const ;
    void eat   () const ;
    void voice () const ;
 };
 
-class lion:public animal 
+class lion : public animal 
 {
 public:
-explicit  lion(const std::string n):animal(n) {}
+    lion(const std::string& n)
+                :animal(n) 
+  { }
   ~lion()
          { 
-           std::cout << "The lion is dead ."<<std::endl;
+           std::cout << "The lion is dead !." << std::endl ;
          }
    void move  () const ;
    void eat   ()  const ;
